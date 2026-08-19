@@ -22,3 +22,13 @@ kafka:
   label: Kafka
   permalink: /kafka
   description: Writing on Apache Kafka architecture, configuration and usage patterns.
+
+java:
+  label: Java
+  permalink: /java
+  description: Writing on Java, the JVM and its ecosystem (Spring, JPA/Hibernate, etc).
+
+performans:
+  label: Performance
+  permalink: /performans
+  description: Writing on performance measurement, benchmarking and optimization.

@@ -22,3 +22,13 @@ kafka:
   label: Kafka
   permalink: /kafka
   description: Apache Kafka mimarisi, konfigürasyonu ve kullanım desenleri üzerine yazılar.
+
+java:
+  label: Java
+  permalink: /java
+  description: Java, JVM ve ekosistemi (Spring, JPA/Hibernate vb.) üzerine yazılar.
+
+performans:
+  label: Performans
+  permalink: /performans
+  description: Performans ölçümü, benchmark ve optimizasyon üzerine yazılar.

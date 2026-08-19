@@ -27,10 +27,12 @@ const config: Config = {
 
   onBrokenLinks: 'throw',
   markdown: {
+    mermaid: true,
     hooks: {
       onBrokenMarkdownLinks: 'warn',
     },
   },
+  themes: ['@docusaurus/theme-mermaid'],
 
   // i18n: Türkçe varsayılan, İngilizce ikinci dil.
   i18n: {
@@ -155,6 +157,9 @@ const config: Config = {
       theme: prismThemes.nightOwlLight,
       darkTheme: prismThemes.dracula,
       additionalLanguages: ['bash', 'diff', 'json', 'go', 'python', 'java'],
+    },
+    mermaid: {
+      theme: {light: 'neutral', dark: 'dark'},
     },
     docs: {
       sidebar: {

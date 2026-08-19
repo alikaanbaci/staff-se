@@ -1,0 +1,24 @@
+sistem-tasarimi:
+  label: Sistem Tasarımı
+  permalink: /sistem-tasarimi
+  description: Ölçeklenebilirlik, mimari ve dağıtık sistemler üzerine yazılar.
+
+kariyer:
+  label: Kariyer
+  permalink: /kariyer
+  description: Mühendislik kariyeri, büyüme ve öğrenilen dersler.
+
+devops:
+  label: DevOps
+  permalink: /devops
+  description: CI/CD, altyapı ve operasyon üzerine yazılar.
+
+golang:
+  label: Go
+  permalink: /golang
+  description: Go dili ile ilgili yazılar.
+
+kafka:
+  label: Kafka
+  permalink: /kafka
+  description: Apache Kafka mimarisi, konfigürasyonu ve kullanım desenleri üzerine yazılar.

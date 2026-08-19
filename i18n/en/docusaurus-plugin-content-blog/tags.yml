@@ -1,0 +1,24 @@
+sistem-tasarimi:
+  label: System Design
+  permalink: /sistem-tasarimi
+  description: Writing on scalability, architecture and distributed systems.
+
+kariyer:
+  label: Career
+  permalink: /kariyer
+  description: Engineering career, growth and lessons learned.
+
+devops:
+  label: DevOps
+  permalink: /devops
+  description: Writing on CI/CD, infrastructure and operations.
+
+golang:
+  label: Go
+  permalink: /golang
+  description: Writing about the Go language.
+
+kafka:
+  label: Kafka
+  permalink: /kafka
+  description: Writing on Apache Kafka architecture, configuration and usage patterns.

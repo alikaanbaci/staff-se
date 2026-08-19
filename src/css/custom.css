@@ -1,0 +1,135 @@
+/**
+ * Lacivert (navy) tema.
+ * Infima değişkenleri hakkında: https://infima.dev
+ */
+
+:root {
+  /* Marka rengi: canlı mavi (accent), navy zemin üzerinde kontrastlı */
+  --ifm-color-primary: #3b6fe0;
+  --ifm-color-primary-dark: #2055c8;
+  --ifm-color-primary-darker: #1c4cb2;
+  --ifm-color-primary-darkest: #123070;
+  --ifm-color-primary-light: #678fe7;
+  --ifm-color-primary-lighter: #7da0ea;
+  --ifm-color-primary-lightest: #bfd0f5;
+
+  --ifm-code-font-size: 92%;
+  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Inter', Helvetica, Arial, sans-serif;
+  --docusaurus-highlighted-code-line-bg: rgba(59, 111, 224, 0.12);
+
+  /* Site geneli için lacivert tonları (light mode) */
+  --navy-950: #060c1f;
+  --navy-900: #0a1128;
+  --navy-800: #0f1c3f;
+  --navy-700: #16264f;
+  --navy-100: #eef1f8;
+
+  --ifm-navbar-background-color: var(--navy-800);
+  --ifm-navbar-link-color: #e7ecfb;
+  --ifm-navbar-height: 4rem;
+  --ifm-footer-background-color: var(--navy-950);
+}
+
+/* Navbar her zaman lacivert — light/dark modda marka kimliğini korur */
+.navbar {
+  --ifm-navbar-link-hover-color: #ffffff;
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.06);
+}
+.navbar__link,
+.navbar__title {
+  color: #e7ecfb;
+}
+.navbar__link:hover,
+.navbar__link--active {
+  color: #ffffff;
+}
+.navbar__logo {
+  height: 1.85rem;
+}
+.navbar .dropdown__link {
+  color: var(--navy-900);
+}
+
+/* Dark mode: koyu lacivert zemin */
+[data-theme='dark'] {
+  --ifm-color-primary: #6d94eb;
+  --ifm-color-primary-dark: #4073e5;
+  --ifm-color-primary-darker: #2a63e2;
+  --ifm-color-primary-darkest: #1744a8;
+  --ifm-color-primary-light: #9ab5f1;
+  --ifm-color-primary-lighter: #b0c5f4;
+  --ifm-color-primary-lightest: #f4f7fd;
+
+  --ifm-background-color: var(--navy-900);
+  --ifm-background-surface-color: var(--navy-800);
+  --docusaurus-highlighted-code-line-bg: rgba(109, 148, 235, 0.18);
+}
+
+[data-theme='dark'] .footer {
+  --ifm-footer-background-color: var(--navy-950);
+}
+
+/* Light mode: navbar/footer lacivert, sayfa gövdesi açık zemin */
+[data-theme='light'] {
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: var(--navy-100);
+}
+
+.footer {
+  --ifm-footer-link-color: #c3cdec;
+  --ifm-footer-title-color: #ffffff;
+}
+.footer--dark {
+  background-color: var(--navy-950);
+}
+
+/* --- Hero / anasayfa bileşenleri --- */
+.hero--navy {
+  background: radial-gradient(
+      1200px circle at 15% -10%,
+      rgba(109, 148, 235, 0.25),
+      transparent 55%
+    ),
+    linear-gradient(180deg, var(--navy-900) 0%, var(--navy-950) 100%);
+  color: #f3f6fd;
+  padding: 5.5rem 1rem 4.5rem;
+}
+[data-theme='light'] .hero--navy {
+  background: radial-gradient(
+      1200px circle at 15% -10%,
+      rgba(59, 111, 224, 0.35),
+      transparent 55%
+    ),
+    linear-gradient(180deg, var(--navy-800) 0%, var(--navy-950) 100%);
+}
+
+.hero--navy .hero__subtitle {
+  color: #c3cdec;
+}
+
+.badge--navy {
+  display: inline-block;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(109, 148, 235, 0.15);
+  border: 1px solid rgba(109, 148, 235, 0.4);
+  color: #bfd0f5;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.card--surface {
+  height: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--ifm-background-surface-color);
+  padding: 1.5rem;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.card--surface:hover {
+  transform: translateY(-2px);
+  border-color: var(--ifm-color-primary);
+}

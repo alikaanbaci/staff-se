@@ -1,0 +1,30 @@
+{
+  "title": {
+    "message": "Your Name",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Site Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Ana Sayfa": {
+    "message": "Home",
+    "description": "Navbar item with label Ana Sayfa"
+  },
+  "item.label.Projeler": {
+    "message": "Projects",
+    "description": "Navbar item with label Projeler"
+  },
+  "item.label.Blog": {
+    "message": "Blog",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.Hakkımda": {
+    "message": "About",
+    "description": "Navbar item with label Hakkımda"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}

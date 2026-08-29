@@ -10,10 +10,6 @@
   padding: 4rem 0;
 }
 
-.sectionAlt {
-  background: var(--ifm-background-surface-color);
-}
-
 .sectionHeading {
   text-align: center;
   margin-bottom: 2.5rem;
@@ -23,18 +19,6 @@
   color: var(--ifm-color-emphasis-700);
   max-width: 640px;
   margin: 0.5rem auto 0;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
-@media (max-width: 996px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 .skillGrid {
@@ -57,21 +41,4 @@
   border: 1px solid var(--ifm-color-emphasis-200);
   font-weight: 600;
   font-size: 0.95rem;
-}
-
-.cardTitle {
-  margin-bottom: 0.5rem;
-}
-
-.cardMeta {
-  font-size: 0.8rem;
-  color: var(--ifm-color-emphasis-600);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: 0.6rem;
-}
-
-.ctaSection {
-  text-align: center;
-  padding: 4rem 1rem;
 }

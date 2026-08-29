@@ -1,6 +1,6 @@
 {
   "title": {
-    "message": "Your Name",
+    "message": "Ali Kaan Bacı",
     "description": "The title in the navbar"
   },
   "logo.alt": {
@@ -10,10 +10,6 @@
   "item.label.Ana Sayfa": {
     "message": "Home",
     "description": "Navbar item with label Ana Sayfa"
-  },
-  "item.label.Projeler": {
-    "message": "Projects",
-    "description": "Navbar item with label Projeler"
   },
   "item.label.Blog": {
     "message": "Blog",

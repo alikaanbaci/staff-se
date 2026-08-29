@@ -108,6 +108,18 @@
   color: #c3cdec;
 }
 
+/* Outline/secondary butonlar Infima varsayılanında koyu metin kullanır —
+   lacivert hero zemininde görünmez oluyor, burada beyaza zorluyoruz. */
+.hero--navy .button--outline.button--secondary {
+  color: #f3f6fd;
+  border-color: rgba(243, 246, 253, 0.5);
+}
+.hero--navy .button--outline.button--secondary:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+  background: rgba(243, 246, 253, 0.08);
+}
+
 .badge--navy {
   display: inline-block;
   padding: 0.3rem 0.85rem;

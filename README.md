@@ -31,18 +31,16 @@ npm run serve       # build çıktısını yerelde servis eder
 ```
 docusaurus.config.ts   Site yapılandırması (başlık, navbar, footer, i18n, tema)
 src/css/custom.css      Lacivert (navy) renk paleti ve tema
-src/pages/index.tsx      Ana sayfa (hero, teknolojiler, öne çıkan projeler)
+src/pages/index.tsx      Ana sayfa (hero, teknolojiler)
 src/pages/about.tsx      Hakkımda sayfası (deneyim, yetenekler, iletişim)
-projects/                 Proje vitrini (docs eklentisi, /projects altında)
 blog/                     Mühendislik blog yazıları (/blog altında)
 i18n/en/                  İngilizce çeviriler
 ```
 
-## İçerik ekleme
+Not: Sitede ayrı bir "Projeler" bölümü yok — docs eklentisi
+(`docusaurus.config.ts`'te `docs: false`) kapalı, `sidebars.ts` yok.
 
-**Yeni bir proje:** `projects/` klasörüne yeni bir `.mdx` dosyası ekleyin;
-otomatik olarak kenar çubuğunda görünür. Önündeki `sidebar_position` sırasını
-belirler.
+## İçerik ekleme
 
 **Yeni bir blog yazısı:** `blog/` klasörüne `YYYY-MM-DD-slug.md` adında bir
 dosya ekleyin (bkz. mevcut örnekler). `{/* truncate */}` işaretinden önceki
@@ -55,7 +53,6 @@ Site, Türkçe varsayılan dil olacak şekilde kuruldu. İngilizce çeviriler
 
 - `i18n/en/docusaurus-theme-classic/navbar.json` ve `footer.json` — navbar/footer metinleri
 - `i18n/en/code.json` — `src/pages/*.tsx` içindeki `<Translate>` metinleri
-- `i18n/en/docusaurus-plugin-content-docs/current/` — `projects/` çevirileri (aynı dosya adlarıyla)
 - `i18n/en/docusaurus-plugin-content-blog/` — `blog/` çevirileri (aynı dosya adlarıyla)
 
 Yeni bir sayfa metni eklediğinizde (`src/pages` içinde), `<Translate id="...">`
@@ -68,17 +65,23 @@ npm run write-translations -- --locale en
 komutu `i18n/en/code.json` içine yeni anahtarı ekler; oradan İngilizce
 karşılığını girin. Detaylar: https://docusaurus.io/docs/i18n/tutorial
 
-## Kişiselleştirme — TODO listesi
+## Durum
 
-Site, placeholder (örnek) içerikle kuruldu. Yayınlamadan önce:
+Site kişiselleştirildi: `docusaurus.config.ts`, `src/pages/about.tsx`,
+`src/pages/index.tsx`, `blog/authors.yml` ve i18n karşılıkları gerçek bilgilerle
+dolduruldu; örnek/placeholder proje ve blog yazıları, ve içi boş kalan
+"Projeler" bölümünün tamamı (docs eklentisi, `projects/`, `sidebars.ts`,
+navbar/footer linkleri) kaldırıldı.
 
-- [ ] `docusaurus.config.ts`: `title`, `url`, `organizationName`, `projectName`, navbar/footer bağlantıları
-- [ ] `src/pages/about.tsx`: deneyim, yetenekler, iletişim bilgileri (ve `i18n/en/code.json`'daki İngilizce karşılıkları)
-- [ ] `src/pages/index.tsx`: hero metni, öne çıkan projeler
-- [ ] `projects/`: kendi projelerinizle değiştirin
-- [ ] `blog/`: örnek yazıları silin veya kendi yazılarınızla değiştirin
-- [ ] `blog/authors.yml`, `i18n/en/docusaurus-plugin-content-blog/authors.yml`: kendi bilgileriniz
-- [ ] `static/img/favicon.ico`, `static/img/logo.svg`, `static/img/social-card.jpg`: kendi görselleriniz
+Kalan tek placeholder: `static/img/social-card.jpg` hâlâ Docusaurus'un
+varsayılan tanıtım görseli — sosyal medyada paylaşılan linklerde bu görünür.
+`static/img/favicon.ico` da varsayılan olabilir. İkisini de kendi görselinizle
+değiştirmek isterseniz aynı dosya adlarıyla üzerine yazmanız yeterli
+(`static/img/logo.svg` zaten özel lacivert tema logosu, dokunmaya gerek yok).
+
+Yeni bir iş deneyimi eklemek için `src/pages/about.tsx`'teki `.timeline`
+bloklarından birini kopyalayıp `about.exp6.*` gibi yeni `Translate` id'leriyle
+ekleyin; İngilizce karşılığını `i18n/en/code.json`'a da eklemeyi unutmayın.
 
 ## Deploy (GitHub Pages)
 

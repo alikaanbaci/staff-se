@@ -15,10 +15,6 @@
     "message": "Home",
     "description": "The label of footer link with label=Ana Sayfa linking to /"
   },
-  "link.item.label.Projeler": {
-    "message": "Projects",
-    "description": "The label of footer link with label=Projeler linking to /projects"
-  },
   "link.item.label.Blog": {
     "message": "Blog",
     "description": "The label of footer link with label=Blog linking to /blog"
@@ -33,18 +29,18 @@
   },
   "link.item.label.LinkedIn": {
     "message": "LinkedIn",
-    "description": "The label of footer link with label=LinkedIn linking to https://www.linkedin.com/in/TODO"
+    "description": "The label of footer link with label=LinkedIn linking to https://www.linkedin.com/in/alikaanbaci"
   },
   "link.item.label.E-posta": {
     "message": "Email",
-    "description": "The label of footer link with label=E-posta linking to mailto:TODO@example.com"
+    "description": "The label of footer link with label=E-posta linking to mailto:alikaanbaci@gmail.com"
   },
   "link.item.label.RSS": {
     "message": "RSS",
     "description": "The label of footer link with label=RSS linking to pathname:///blog/rss.xml"
   },
   "copyright": {
-    "message": "Copyright © 2026 Your Name. Built with Docusaurus.",
+    "message": "Copyright © 2026 Ali Kaan Bacı. Built with Docusaurus.",
     "description": "The footer copyright"
   }
 }

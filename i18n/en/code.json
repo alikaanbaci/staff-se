@@ -9,64 +9,91 @@
     "message": "About"
   },
   "about.intro": {
-    "message": "TODO: Write a 3-4 sentence summary introducing yourself — who you are, what you work on, what problems interest you."
+    "message": "I enjoy solving software problems and designing sustainable, reusable code structures. I currently work as a Senior Software Engineer at OBSS, building backend and full-stack projects in the Java/Spring Boot ecosystem; I'm interested in microservice architectures, system design and performance problems. I don't shy away from taking ownership, being active within the team and supporting my teammates; I look for solutions that address the root cause rather than quick workarounds."
   },
   "about.experience.title": {
     "message": "Experience"
   },
   "about.exp1.period": {
-    "message": "2023 — Present"
+    "message": "April 2024 — Present"
   },
   "about.exp1.role": {
     "message": "Senior Software Engineer"
   },
   "about.exp1.company": {
-    "message": "TODO: Company Name"
+    "message": "OBSS"
   },
   "about.exp1.description": {
-    "message": "TODO: Describe your responsibilities in this role, the technologies you used and the concrete results you achieved."
+    "message": "I work on TKpay, a payment facilitator (PayFac) platform under Turkish Airlines' digital payments ecosystem that lets merchants accept and manage payments. I stabilized settlement and reconciliation workflows by fixing critical design flaws and refactoring inefficient components, cutting processing time from hours to minutes for ~50K daily transactions. I led refactoring initiatives in business-critical financial workflows, implemented features such as pricing/maturity difference calculations and auto-cancellation, and resolved complex system inconsistencies through root-cause analysis. Tech stack: Java, Spring Boot, PostgreSQL, Kafka, Kubernetes."
+  },
+  "about.exp1.description2": {
+    "message": "In the same period, I contributed to Garanti Teknoloji's employee management and pricing solution, migrating legacy .NET services to a Java / Spring Boot microservice architecture; implemented the salary increase and employee management modules with their complex domain rules, working closely with business analysts to turn requirements into robust technical solutions. Tech stack: Java, Spring Boot, MSSQL."
   },
   "about.exp2.period": {
-    "message": "2020 — 2023"
+    "message": "March 2022 — January 2024"
   },
   "about.exp2.role": {
-    "message": "Software Engineer"
+    "message": "Senior Software Engineer"
   },
   "about.exp2.company": {
-    "message": "TODO: Company Name"
+    "message": "Accenture"
   },
   "about.exp2.description": {
-    "message": "TODO: Describe your responsibilities in this role, the technologies you used and the concrete results you achieved."
+    "message": "Built distributed backend services and data integration solutions for an IoT platform at Dow Chemicals, supporting industrial IoT use cases and mobile applications; focused on stabilizing cloud-native data ingestion, synchronization and backend services on Azure and Kubernetes. Refactored data ingestion workflows integrating SAP systems to improve the reliability of pipelines feeding Couchbase and mobile clients; designed distributed backend services on Azure Kubernetes supporting an offline-first architecture with Couchbase Sync Gateway. Refactored unreliable batch jobs and data pipelines, reducing operational overhead; implemented infrastructure-as-code monitoring and alerting with ARM templates, reducing alert noise. Designed role-based service execution via parameterized application instances, and authored technical design documents presented to international teams. Tech stack: Java, Spring Boot, Azure, Kubernetes, Couchbase."
   },
   "about.exp3.period": {
-    "message": "2018 — 2020"
+    "message": "February 2021 — March 2022"
   },
   "about.exp3.role": {
     "message": "Software Engineer"
   },
   "about.exp3.company": {
-    "message": "TODO: Company / University"
+    "message": "OBSS"
   },
   "about.exp3.description": {
-    "message": "TODO: Add a short summary of the start of your career."
+    "message": "Contributed to rebuilding an internal OBSS mobile and web application into a scalable, product-oriented platform, focusing on backend architecture, reusable components, observability and development infrastructure. Designed reusable backend architecture and foundational components to improve development efficiency, and implemented dynamic query mechanisms using Spring Data Specifications. Tech stack: Java, Spring Boot, MongoDB, React.js, Kibana."
+  },
+  "about.exp4.period": {
+    "message": "October 2019 — February 2021"
+  },
+  "about.exp4.role": {
+    "message": "Software Engineer"
+  },
+  "about.exp4.company": {
+    "message": "Etiya"
+  },
+  "about.exp4.description": {
+    "message": "Contributed to a customer complaint and service management project for Türk Telekom, a multi-tenant platform handling inbound customer requests, complaints and fault reports; participated in system design, technical analysis and solution discussions. Tech stack: Java, Spring Boot, Oracle, Spring Data JPA, Angular."
+  },
+  "about.education.title": {
+    "message": "Education"
+  },
+  "about.education1.period": {
+    "message": "2013 — 2018"
+  },
+  "about.education1.degree": {
+    "message": "B.Sc. in Computer Engineering"
+  },
+  "about.education1.school": {
+    "message": "Karabük University"
+  },
+  "about.education1.description": {
+    "message": "100% English-taught program, GPA: 3.26/4.00."
   },
   "about.skills.title": {
     "message": "Skills"
   },
   "about.skills.languages": {
-    "message": "Languages"
+    "message": "Languages & Frameworks"
   },
   "about.skills.infra": {
-    "message": "Infrastructure"
+    "message": "Platforms & Tools"
   },
   "about.skills.data": {
-    "message": "Data"
+    "message": "Databases"
   },
   "about.contact.title": {
     "message": "Contact"
-  },
-  "about.contact.subtitle": {
-    "message": "TODO: Write a short invitation to get in touch — mention whether you are open to new opportunities, collaboration, or just a chat."
   },
   "about.contact.email": {
     "message": "Send an Email"
@@ -75,13 +102,10 @@
     "message": "Software Engineer"
   },
   "homepage.hero.title": {
-    "message": "Your Name"
+    "message": "Ali Kaan Bacı"
   },
   "homepage.hero.subtitle": {
-    "message": "I work on distributed systems and backend engineering. Here I share the projects I build and notes from my engineering journey."
-  },
-  "homepage.hero.ctaProjects": {
-    "message": "See My Projects"
+    "message": "Engineering notes on backend development, system design and performance: practical notes on microservice architectures, Kafka and database performance."
   },
   "homepage.hero.ctaBlog": {
     "message": "Go to Blog"
@@ -90,43 +114,7 @@
     "message": "Technologies I Use"
   },
   "homepage.skills.subtitle": {
-    "message": "TODO: Update this list to reflect your own tech stack and areas of expertise."
-  },
-  "homepage.projects.title": {
-    "message": "Featured Projects"
-  },
-  "homepage.projects.subtitle": {
-    "message": "A few selected projects I have worked on. Check out the Projects page to see all of them."
-  },
-  "homepage.projects.item1.title": {
-    "message": "Distributed Task Queue"
-  },
-  "homepage.projects.item1.description": {
-    "message": "A horizontally scalable task queue system written in Go, with at-least-once delivery guarantees."
-  },
-  "homepage.projects.item2.title": {
-    "message": "Observability Dashboard"
-  },
-  "homepage.projects.item2.description": {
-    "message": "An observability platform providing end-to-end tracing, logging and metrics collection for microservices."
-  },
-  "homepage.projects.item3.title": {
-    "message": "This Site"
-  },
-  "homepage.projects.item3.description": {
-    "message": "An i18n-enabled engineering blog and personal portfolio site built with Docusaurus."
-  },
-  "homepage.projects.viewAll": {
-    "message": "View All Projects"
-  },
-  "homepage.cta.title": {
-    "message": "Want to work together?"
-  },
-  "homepage.cta.subtitle": {
-    "message": "TODO: Add a short invitation and your preferred contact channel here."
-  },
-  "homepage.cta.button": {
-    "message": "Get in Touch"
+    "message": "The languages, frameworks and infrastructure tools I use most in my day-to-day work and side projects."
   },
   "homepage.meta.title": {
     "message": "Home"

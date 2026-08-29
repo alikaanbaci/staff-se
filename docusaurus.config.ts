@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Adınız Soyadınız',
-  tagline: 'Software Engineer — dağıtık sistemler, backend ve mühendislik notları',
+  title: 'Ali Kaan Bacı',
+  tagline: 'Software Engineer — backend, full-stack ve sistem tasarımı üzerine mühendislik notları',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -54,13 +54,7 @@ const config: Config = {
     [
       'classic',
       {
-        docs: {
-          id: 'default',
-          path: 'projects',
-          routeBasePath: 'projects',
-          sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/alikaanbaci/staff-se/tree/main/',
-        },
+        docs: false,
         blog: {
           path: 'blog',
           routeBasePath: 'blog',
@@ -94,7 +88,7 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'Adınız Soyadınız',
+      title: 'Ali Kaan Bacı',
       logo: {
         alt: 'Site Logosu',
         src: 'img/logo.svg',
@@ -104,12 +98,6 @@ const config: Config = {
           to: '/',
           label: 'Ana Sayfa',
           position: 'left',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'projectsSidebar',
-          position: 'left',
-          label: 'Projeler',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {to: '/about', label: 'Hakkımda', position: 'left'},
@@ -131,7 +119,6 @@ const config: Config = {
           title: 'Site',
           items: [
             {label: 'Ana Sayfa', to: '/'},
-            {label: 'Projeler', to: '/projects'},
             {label: 'Blog', to: '/blog'},
             {label: 'Hakkımda', to: '/about'},
           ],
@@ -140,8 +127,8 @@ const config: Config = {
           title: 'Bağlantılar',
           items: [
             {label: 'GitHub', href: 'https://github.com/alikaanbaci'},
-            {label: 'LinkedIn', href: 'https://www.linkedin.com/in/TODO'},
-            {label: 'E-posta', href: 'mailto:TODO@example.com'},
+            {label: 'LinkedIn', href: 'https://www.linkedin.com/in/alikaanbaci'},
+            {label: 'E-posta', href: 'mailto:alikaanbaci@gmail.com'},
           ],
         },
         {
@@ -151,7 +138,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Adınız Soyadınız. Docusaurus ile inşa edildi.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Ali Kaan Bacı. Docusaurus ile inşa edildi.`,
     },
     prism: {
       theme: prismThemes.nightOwlLight,
@@ -160,12 +147,6 @@ const config: Config = {
     },
     mermaid: {
       theme: {light: 'neutral', dark: 'dark'},
-    },
-    docs: {
-      sidebar: {
-        hideable: true,
-        autoCollapseCategories: true,
-      },
     },
   } satisfies Preset.ThemeConfig,
 };

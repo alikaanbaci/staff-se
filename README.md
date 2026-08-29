@@ -1,18 +1,19 @@
 # staff-se
 
-Docusaurus ile inşa edilmiş, lacivert temalı, Türkçe/İngilizce (i18n) destekli
-mühendislik blogu ve kişisel portföy sitesi.
+A navy-themed engineering blog and personal portfolio site with Turkish/
+English (i18n) support, built with Docusaurus.
 
-## Kurulum ve geliştirme
+Live at: https://alikaanbaci.github.io/staff-se/
+
+## Setup and development
 
 ```bash
 npm install
 npm start
 ```
 
-`npm start`, http://localhost:3000/staff-se/ adresinde geliştirme sunucusunu
-açar (varsayılan dil: Türkçe). İngilizce sürümü geliştirme sırasında görmek
-için:
+`npm start` opens the dev server at http://localhost:3000/staff-se/ (default
+locale: Turkish). To view the English version during development:
 
 ```bash
 npm start -- --locale en
@@ -21,80 +22,79 @@ npm start -- --locale en
 ## Build
 
 ```bash
-npm run build      # tüm diller için statik dosyalar (build/) üretir
-npm run typecheck  # TypeScript tip kontrolü
-npm run serve       # build çıktısını yerelde servis eder
+npm run build      # generates static files (build/) for all locales
+npm run typecheck  # TypeScript type checking
+npm run serve       # serves the build output locally
 ```
 
-## Proje yapısı
+## Project structure
 
 ```
-docusaurus.config.ts   Site yapılandırması (başlık, navbar, footer, i18n, tema)
-src/css/custom.css      Lacivert (navy) renk paleti ve tema
-src/pages/index.tsx      Ana sayfa (hero, teknolojiler)
-src/pages/about.tsx      Hakkımda sayfası (deneyim, yetenekler, iletişim)
-blog/                     Mühendislik blog yazıları (/blog altında)
-i18n/en/                  İngilizce çeviriler
+docusaurus.config.ts   Site config (title, navbar, footer, i18n, theme)
+src/css/custom.css      Navy color palette and theme
+src/pages/index.tsx      Home page (hero, technologies)
+src/pages/about.tsx      About page (experience, skills, contact)
+blog/                     Engineering blog posts (under /blog)
+i18n/en/                  English translations
 ```
 
-Not: Sitede ayrı bir "Projeler" bölümü yok — docs eklentisi
-(`docusaurus.config.ts`'te `docs: false`) kapalı, `sidebars.ts` yok.
+Note: the site has no separate "Projects" section — the docs plugin is
+disabled (`docs: false` in `docusaurus.config.ts`), and there's no
+`sidebars.ts`.
 
-## İçerik ekleme
+## Adding content
 
-**Yeni bir blog yazısı:** `blog/` klasörüne `YYYY-MM-DD-slug.md` adında bir
-dosya ekleyin (bkz. mevcut örnekler). `{/* truncate */}` işaretinden önceki
-kısım, blog listesinde önizleme olarak gösterilir.
+**A new blog post:** add a `YYYY-MM-DD-slug.md` file to `blog/` (see the
+existing examples). The part before the `{/* truncate */}` marker is shown
+as the preview in the blog list.
 
-## i18n (Türkçe / İngilizce)
+## i18n (Turkish / English)
 
-Site, Türkçe varsayılan dil olacak şekilde kuruldu. İngilizce çeviriler
-`i18n/en/` altında tutulur:
+The site is set up with Turkish as the default locale. English translations
+live under `i18n/en/`:
 
-- `i18n/en/docusaurus-theme-classic/navbar.json` ve `footer.json` — navbar/footer metinleri
-- `i18n/en/code.json` — `src/pages/*.tsx` içindeki `<Translate>` metinleri
-- `i18n/en/docusaurus-plugin-content-blog/` — `blog/` çevirileri (aynı dosya adlarıyla)
+- `i18n/en/docusaurus-theme-classic/navbar.json` and `footer.json` — navbar/footer text
+- `i18n/en/code.json` — `<Translate>` strings inside `src/pages/*.tsx`
+- `i18n/en/docusaurus-plugin-content-blog/` — `blog/` translations (same file names)
 
-Yeni bir sayfa metni eklediğinizde (`src/pages` içinde), `<Translate id="...">`
-ile sarmalayın, sonra:
+When you add new page text (inside `src/pages`), wrap it with
+`<Translate id="...">`, then run:
 
 ```bash
 npm run write-translations -- --locale en
 ```
 
-komutu `i18n/en/code.json` içine yeni anahtarı ekler; oradan İngilizce
-karşılığını girin. Detaylar: https://docusaurus.io/docs/i18n/tutorial
+This adds the new key to `i18n/en/code.json`; fill in the English text
+there. Details: https://docusaurus.io/docs/i18n/tutorial
 
-## Durum
+## Status
 
-Site kişiselleştirildi: `docusaurus.config.ts`, `src/pages/about.tsx`,
-`src/pages/index.tsx`, `blog/authors.yml` ve i18n karşılıkları gerçek bilgilerle
-dolduruldu; örnek/placeholder proje ve blog yazıları, ve içi boş kalan
-"Projeler" bölümünün tamamı (docs eklentisi, `projects/`, `sidebars.ts`,
-navbar/footer linkleri) kaldırıldı.
+The site has been personalized: `docusaurus.config.ts`, `src/pages/about.tsx`,
+`src/pages/index.tsx`, `blog/authors.yml` and their i18n counterparts are
+filled in with real content; the example/placeholder project pages and blog
+posts, and the entire (empty) "Projects" section (docs plugin, `projects/`,
+`sidebars.ts`, navbar/footer links) have been removed.
 
-Kalan tek placeholder: `static/img/social-card.jpg` hâlâ Docusaurus'un
-varsayılan tanıtım görseli — sosyal medyada paylaşılan linklerde bu görünür.
-`static/img/favicon.ico` da varsayılan olabilir. İkisini de kendi görselinizle
-değiştirmek isterseniz aynı dosya adlarıyla üzerine yazmanız yeterli
-(`static/img/logo.svg` zaten özel lacivert tema logosu, dokunmaya gerek yok).
+One placeholder remains: `static/img/social-card.jpg` is still Docusaurus's
+default promo image — it's what shows up in social-media link previews.
+`static/img/favicon.ico` may also still be the default. To replace either,
+just overwrite the file under the same name (`static/img/logo.svg` is
+already a custom navy-themed logo, no need to touch it).
 
-Yeni bir iş deneyimi eklemek için `src/pages/about.tsx`'teki `.timeline`
-bloklarından birini kopyalayıp `about.exp6.*` gibi yeni `Translate` id'leriyle
-ekleyin; İngilizce karşılığını `i18n/en/code.json`'a da eklemeyi unutmayın.
+To add a new job entry, copy one of the `.timelineItem` blocks in
+`src/pages/about.tsx` and give it new `Translate` ids like `about.exp5.*`;
+remember to add the English text to `i18n/en/code.json` too.
 
 ## Deploy (GitHub Pages)
 
-`.github/workflows/deploy.yml`, `main` dalına her push'ta siteyi otomatik
-build edip GitHub Pages'e deploy eder. Tek seferlik kurulum:
+`.github/workflows/deploy.yml` automatically builds and deploys the site to
+GitHub Pages on every push to `main`. One-time setup:
 
-1. GitHub'da bu depoyu oluşturun/push edin.
-2. Repo **Settings → Pages** üzerinden **Source** seçeneğini **GitHub
-   Actions** olarak ayarlayın.
-3. `docusaurus.config.ts` içindeki `url`, `baseUrl`, `organizationName`,
-   `projectName` alanlarının GitHub kullanıcı adınız/repo adınızla eşleştiğinden
-   emin olun.
-4. `main`'e push edince workflow otomatik çalışır.
+1. Create/push this repo on GitHub.
+2. Under repo **Settings → Pages**, set **Source** to **GitHub Actions**.
+3. Make sure `url`, `baseUrl`, `organizationName` and `projectName` in
+   `docusaurus.config.ts` match your GitHub username/repo name.
+4. The workflow runs automatically on every push to `main`.
 
-`.github/workflows/ci.yml`, pull request'lerde build/typecheck kontrolü
-yapar (deploy etmez).
+`.github/workflows/ci.yml` runs a build/typecheck check on pull requests
+(it doesn't deploy).

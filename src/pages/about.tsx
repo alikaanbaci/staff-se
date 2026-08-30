@@ -20,19 +20,6 @@ export default function About(): ReactNode {
           <Heading as="h1">
             <Translate id="about.title">Hakkımda</Translate>
           </Heading>
-          <p style={{maxWidth: 720, fontSize: '1.1rem'}}>
-            <Translate id="about.intro">
-              Yazılım problemlerini çözmeyi, sürdürülebilir ve yeniden
-              kullanılabilir kod yapıları tasarlamayı seviyorum. Şu anda
-              OBSS'te Senior Software Engineer olarak Java/Spring Boot
-              ekosisteminde backend ve full-stack projeler geliştiriyorum;
-              mikroservis mimarileri, sistem tasarımı ve performans
-              problemleriyle ilgileniyorum. Sorumluluk almaktan çekinmem,
-              ekipte aktif olmayı ve takım arkadaşlarıma destek olmayı
-              önemserim; kestirme çözümler yerine kök nedene inen, kalıcı
-              çözümler ararım.
-            </Translate>
-          </p>
         </div>
       </header>
 

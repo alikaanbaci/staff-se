@@ -8,9 +8,6 @@
   "about.title": {
     "message": "About"
   },
-  "about.intro": {
-    "message": "I enjoy solving software problems and designing sustainable, reusable code structures. I currently work as a Senior Software Engineer at OBSS, building backend and full-stack projects in the Java/Spring Boot ecosystem; I'm interested in microservice architectures, system design and performance problems. I don't shy away from taking ownership, being active within the team and supporting my teammates; I look for solutions that address the root cause rather than quick workarounds."
-  },
   "about.experience.title": {
     "message": "Experience"
   },

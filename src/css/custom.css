@@ -4,6 +4,11 @@
  */
 
 :root {
+  /* Daha minimal/kompakt bir görünüm için taban font boyutunu biraz
+     küçültüyoruz — rem tabanlı tüm boyut/boşluklar (site genelinde yaygın)
+     buna göre orantılı küçülür. */
+  --ifm-font-size-base: 93.75%;
+
   /* Marka rengi: canlı mavi (accent), navy zemin üzerinde kontrastlı */
   --ifm-color-primary: #3b6fe0;
   --ifm-color-primary-dark: #2055c8;
@@ -93,7 +98,7 @@
     ),
     linear-gradient(180deg, var(--navy-900) 0%, var(--navy-950) 100%);
   color: #f3f6fd;
-  padding: 5.5rem 1rem 4.5rem;
+  padding: 4rem 1rem 3.5rem;
 }
 [data-theme='light'] .hero--navy {
   background: radial-gradient(
@@ -104,7 +109,14 @@
     linear-gradient(180deg, var(--navy-800) 0%, var(--navy-950) 100%);
 }
 
+/* Infima'nın hero başlığı/alt başlığı varsayılanı (3rem / 1.5rem) daha
+   minimal bir görünüm için burada küçültülüyor. */
+.hero--navy .hero__title {
+  font-size: 2.25rem;
+}
+
 .hero--navy .hero__subtitle {
+  font-size: 1.05rem;
   color: #c3cdec;
 }
 
@@ -131,6 +143,19 @@
   font-weight: 600;
   letter-spacing: 0.02em;
   margin-bottom: 1.25rem;
+}
+
+/* --- Blog listesi --- */
+/* Docusaurus varsayılanı /blog listesindeki başlıkları da (h2) 3rem
+   yapıyor — tekil yazı sayfasındaki (h1) boyutla aynı, listede (özellikle
+   art arda birden fazla yazı olunca) gereksiz büyük ve kalın duruyor.
+   Sadece liste sayfalarını (<html> üzerindeki page class'ları, Docusaurus
+   tarafından otomatik eklenir) hedef alıyoruz; tekil yazı sayfası (h1)
+   etkilenmiyor. */
+.blog-list-page article header h2,
+.blog-tags-post-list-page article header h2,
+.blog-authors-posts-page article header h2 {
+  font-size: 1.5rem;
 }
 
 .card--surface {

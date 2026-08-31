@@ -6,24 +6,23 @@ tags: [java, sistem-tasarimi]
 description: 10 farklı banka ile milyonlarca ödeme kaydının mutabakatını Spring Batch ile hatasız, performanslı ve production akışını kesmeden yapan bir pipeline'ın mimari kararları — partitioning, keyset pagination, JDBC batch writer ve restart/idempotency.
 ---
 
-10 farklı banka ile milyonlarca ödeme kaydının mutabakatını yapmamız
-gerekiyordu. Gereksinimler net ama birbirine gerilim yaratıyordu: hatasız,
-performanslı ve ana ödeme akışını kesmeyecek. Bu yazıda bu üç kısıtı bir
-arada karşılayan, Spring Batch üzerine kurulu partitioned ve restart
-edilebilir pipeline'ın mimari kararlarını anlatıyorum.
+10 farklı banka ile milyonlarca ödeme kaydının mutabakatı; hatasız,
+performanslı ve ana ödeme akışını kesmeyen bir pipeline gerektiriyordu. Bu
+yazıda bu üç kısıtı bir arada karşılayan, Spring Batch üzerine kurulu
+partitioned ve restart edilebilir pipeline'ın mimari kararları ele alınıyor.
 
 {/* truncate */}
 
 ## Problem
 
-10 farklı banka ile milyonlarca ödeme kaydının mutabakatını yapmamız
+10 farklı banka ile milyonlarca ödeme kaydının mutabakatının yapılması
 gerekiyordu. Gereksinimler net ama birbirine gerilim yaratıyordu: **hatasız**
 (bir kayıt bile kaybolmayacak veya çift işlenmeyecek), **performanslı**
 (milyonlarca satır makul sürede bitecek) ve **sistemin ana akışını
 kesmeyecek** (production ödeme akışına dokunmayacak). Bu üç kısıt bir arada,
 basit bir `for` döngüsüyle çözülebilecek bir problem değil — restart,
 checkpoint, transaction sınırları ve paralellik gerektiriyor. Bunun için
-Spring Batch'i seçtik.
+Spring Batch tercih edildi.
 
 ## Neden Spring Batch
 
@@ -294,17 +293,17 @@ Spring Batch, `JobRepository` aracılığıyla kendi tablolarını
   baştan başlamaz.
 
 Bunun karşılığında **domain/iş sonucu verisi Spring Batch'in sorumluluğunda
-değil** — bunun için kendi tablolarımızı açtık:
+değil** — bunun için ayrı domain tabloları açıldı:
 
 - `reconciliation_run` — backoffice context'i (triggered_by, bankId, tarih
   aralığı) + Spring Batch'in `job_execution_id`'sine foreign key
 - `reconciliation_result` — her kayıt için MATCHED/UNMATCHED/CANDIDATE
   sonucu, hangi run'da, hangi match tipiyle
 
-Bu ayrım önemli: framework'ün iç execution/restart state'ine dokunmuyoruz
+Bu ayrım önemli: framework'ün iç execution/restart state'ine dokunulmuyor
 (versiyon yükseltmelerinde şema değişebilir), backoffice'in ihtiyaç duyduğu
-"bu run'da kaç unmatched var" sorgusu ise tamamen bizim kontrolümüzdeki
-domain tablolarından geliyor.
+"bu run'da kaç unmatched var" sorgusu ise tamamen ayrı tutulan domain
+tablolarından geliyor.
 
 ## Backoffice'ten Manuel Tetikleme
 

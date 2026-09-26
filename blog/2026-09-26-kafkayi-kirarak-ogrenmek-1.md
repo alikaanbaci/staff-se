@@ -474,15 +474,6 @@ Pull modelinin kazandırdıkları şunlardır: consumer kendi hızında okur
 (**replay**), broker ise "kime neyi gönderdim" state'i tutmak zorunda kalmaz.
 RabbitMQ gibi push tabanlı sistemlerle temel mimari fark budur.
 
-:::warning[Mülakat tuzağı]
-
-Poll etmek yalnızca mesaj almak değil, aynı zamanda "hâlâ çalışıyorum"
-sinyalidir. Heartbeat ayrı bir thread'de gider, ancak `max.poll.interval.ms`
-(varsayılan 5 dk) içinde yeni mesaj alınmazsa consumer group'tan atılır ve
-rebalance başlar. Bu mekanizma "canlı ama takılmış" consumer'ı yakalar.
-
-:::
-
 ## Çıkarımlar
 
 - Replication **partition seviyesindedir**; bir broker bir partition'ın en

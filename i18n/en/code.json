@@ -1,120 +1,219 @@
 {
+  "homepage.meta.title": {
+    "message": "Home"
+  },
+  "homepage.meta.description": {
+    "message": "Engineering blog on backend engineering, system design and performance."
+  },
+  "homepage.hero.badge": {
+    "message": "Senior Software Engineer · Istanbul"
+  },
+  "homepage.hero.title": {
+    "message": "Backend systems,{br}built to be {accent}"
+  },
+  "homepage.hero.titleAccent": {
+    "message": "reliable at scale."
+  },
+  "homepage.hero.subtitle": {
+    "message": "I'm Ali Kaan. I design event-driven services with Java, Spring Boot and Kafka, and write about system design, performance and what actually happens in production."
+  },
+  "homepage.hero.ctaBlog": {
+    "message": "Read the blog"
+  },
+  "homepage.hero.ctaAbout": {
+    "message": "About me"
+  },
+  "homepage.posts.eyebrow": {
+    "message": "Latest posts"
+  },
+  "homepage.posts.title": {
+    "message": "Recent writing"
+  },
+  "homepage.posts.viewAll": {
+    "message": "View all posts →"
+  },
+  "homepage.focus.eyebrow": {
+    "message": "Focus areas"
+  },
+  "homepage.focus.title": {
+    "message": "What I work on and write about"
+  },
+  "homepage.focus.design.title": {
+    "message": "System design"
+  },
+  "homepage.focus.design.body": {
+    "message": "Pipelines and services that stay correct under failure — partitioning, restartability, idempotency and consistency trade-offs."
+  },
+  "homepage.focus.perf.title": {
+    "message": "Performance"
+  },
+  "homepage.focus.perf.body": {
+    "message": "Measure first, then optimize — JPA and Hibernate pitfalls, query shapes and PostgreSQL behaviour, backed by benchmarks."
+  },
+  "homepage.focus.events.title": {
+    "message": "Event-driven systems"
+  },
+  "homepage.focus.events.body": {
+    "message": "Kafka in production: architecture, the configs that matter, and patterns like the transactional outbox."
+  },
+  "homepage.stack.label": {
+    "message": "Daily stack"
+  },
+  "homepage.cta.title": {
+    "message": "Get new posts in your feed."
+  },
+  "homepage.cta.body": {
+    "message": "Subscribe via RSS, or connect on LinkedIn to talk backend architecture."
+  },
+  "homepage.cta.rss": {
+    "message": "Subscribe via RSS"
+  },
   "about.meta.title": {
     "message": "About"
   },
   "about.meta.description": {
     "message": "Experience, skills and contact information."
   },
-  "about.experience.title": {
+  "about.hero.headline": {
+    "message": "Senior Software Engineer · Backend & Distributed Systems"
+  },
+  "about.hero.intro": {
+    "message": "I design and build Java and Spring Boot services on event-driven, Kubernetes-based architectures — most recently in payments, where reliability and data consistency are non-negotiable. This site is where I write down what I learn: design decisions, benchmarks and production lessons."
+  },
+  "about.hero.contact": {
+    "message": "Get in touch"
+  },
+  "about.facts.title": {
+    "message": "Quick facts"
+  },
+  "about.facts.location": {
+    "message": "Location"
+  },
+  "about.facts.locationValue": {
+    "message": "Istanbul, Türkiye"
+  },
+  "about.facts.current": {
+    "message": "Current"
+  },
+  "about.facts.domain": {
+    "message": "Domain"
+  },
+  "about.facts.domainValue": {
+    "message": "Payments"
+  },
+  "about.experience.eyebrow": {
     "message": "Experience"
   },
-  "about.exp1.period": {
-    "message": "April 2024 — Present"
+  "about.experience.title": {
+    "message": "Where I've worked"
   },
   "about.exp1.role": {
     "message": "Senior Software Engineer"
   },
-  "about.exp1.company": {
-    "message": "OBSS"
+  "about.exp1.period": {
+    "message": "Apr 2024 — Present"
   },
-  "about.exp1.description": {
-    "message": "I work on TKpay, a payment facilitator (PayFac) platform under Turkish Airlines' digital payments ecosystem that lets merchants accept and manage payments. I stabilized settlement and reconciliation workflows by fixing critical design flaws and refactoring inefficient components, cutting processing time from hours to minutes for ~50K daily transactions. I led refactoring initiatives in business-critical financial workflows, implemented features such as pricing/maturity difference calculations and auto-cancellation, and resolved complex system inconsistencies through root-cause analysis. Tech stack: Java, Spring Boot, PostgreSQL, Kafka, Kubernetes."
-  },
-  "about.exp1.description2": {
-    "message": "In the same period, I contributed to Garanti Teknoloji's employee management and pricing solution, migrating legacy .NET services to a Java / Spring Boot microservice architecture; implemented the salary increase and employee management modules with their complex domain rules, working closely with business analysts to turn requirements into robust technical solutions. Tech stack: Java, Spring Boot, MSSQL."
-  },
-  "about.exp2.period": {
-    "message": "March 2022 — January 2024"
+  "about.exp1.summary": {
+    "message": "Payment systems on Java, Spring Boot, Kafka and Kubernetes — event-driven microservices, batch reconciliation and long-running core developments."
   },
   "about.exp2.role": {
     "message": "Senior Software Engineer"
   },
-  "about.exp2.company": {
-    "message": "Accenture"
+  "about.exp2.period": {
+    "message": "Mar 2022 — Jan 2024"
   },
-  "about.exp2.description": {
-    "message": "Built distributed backend services and data integration solutions for an IoT platform at Dow Chemicals, supporting industrial IoT use cases and mobile applications; focused on stabilizing cloud-native data ingestion, synchronization and backend services on Azure and Kubernetes. Refactored data ingestion workflows integrating SAP systems to improve the reliability of pipelines feeding Couchbase and mobile clients; designed distributed backend services on Azure Kubernetes supporting an offline-first architecture with Couchbase Sync Gateway. Refactored unreliable batch jobs and data pipelines, reducing operational overhead; implemented infrastructure-as-code monitoring and alerting with ARM templates, reducing alert noise. Designed role-based service execution via parameterized application instances, and authored technical design documents presented to international teams. Tech stack: Java, Spring Boot, Azure, Kubernetes, Couchbase."
-  },
-  "about.exp3.period": {
-    "message": "February 2021 — March 2022"
+  "about.exp2.summary": {
+    "message": "IoT platform on Azure and Kubernetes with Couchbase."
   },
   "about.exp3.role": {
     "message": "Software Engineer"
   },
-  "about.exp3.company": {
-    "message": "OBSS"
+  "about.exp3.period": {
+    "message": "Feb 2021 — Mar 2022"
   },
-  "about.exp3.description": {
-    "message": "Contributed to rebuilding an internal OBSS mobile and web application into a scalable, product-oriented platform, focusing on backend architecture, reusable components, observability and development infrastructure. Designed reusable backend architecture and foundational components to improve development efficiency, and implemented dynamic query mechanisms using Spring Data Specifications. Tech stack: Java, Spring Boot, MongoDB, React.js, Kibana."
-  },
-  "about.exp4.period": {
-    "message": "October 2019 — February 2021"
+  "about.exp3.summary": {
+    "message": "Rebuilt an internal mobile and web platform — reusable backend architecture on Java, Spring Boot and MongoDB."
   },
   "about.exp4.role": {
     "message": "Software Engineer"
   },
-  "about.exp4.company": {
-    "message": "Etiya"
+  "about.exp4.period": {
+    "message": "Oct 2019 — Feb 2021"
   },
-  "about.exp4.description": {
-    "message": "Contributed to a customer complaint and service management project for Türk Telekom, a multi-tenant platform handling inbound customer requests, complaints and fault reports; participated in system design, technical analysis and solution discussions. Tech stack: Java, Spring Boot, Oracle, Spring Data JPA, Angular."
+  "about.exp4.summary": {
+    "message": "Multi-tenant customer complaint and service management platform — Java, Spring Boot, Oracle and Angular."
   },
-  "about.education.title": {
-    "message": "Education"
-  },
-  "about.education1.period": {
-    "message": "2013 — 2018"
-  },
-  "about.education1.degree": {
-    "message": "B.Sc. in Computer Engineering"
-  },
-  "about.education1.school": {
-    "message": "Karabük University"
-  },
-  "about.education1.description": {
-    "message": "100% English-taught program, GPA: 3.26/4.00."
-  },
-  "about.skills.title": {
+  "about.skills.eyebrow": {
     "message": "Skills"
   },
+  "about.skills.title": {
+    "message": "Toolbox"
+  },
   "about.skills.languages": {
-    "message": "Languages & Frameworks"
+    "message": "Languages & frameworks"
   },
   "about.skills.infra": {
-    "message": "Platforms & Tools"
+    "message": "Infrastructure"
   },
   "about.skills.data": {
-    "message": "Databases"
+    "message": "Data"
+  },
+  "about.education.eyebrow": {
+    "message": "Education"
+  },
+  "about.education.title": {
+    "message": "Background"
+  },
+  "about.education1.degree": {
+    "message": "B.Sc. Computer Engineering"
+  },
+  "about.education1.school": {
+    "message": "Karabük University · 100% English-taught program"
   },
   "about.contact.title": {
-    "message": "Contact"
+    "message": "Let's talk backend."
+  },
+  "about.contact.body": {
+    "message": "Open to conversations about distributed systems, performance work and engineering roles."
   },
   "about.contact.email": {
-    "message": "Send an Email"
+    "message": "Send an email"
   },
-  "homepage.hero.badge": {
-    "message": "Software Engineer"
+  "blog.readingTime": {
+    "message": "{minutes} min read"
   },
-  "homepage.hero.title": {
-    "message": "Ali Kaan Bacı"
+  "blog.list.title": {
+    "message": "Engineering notes"
   },
-  "homepage.hero.subtitle": {
-    "message": "Engineering notes on backend development, system design and performance: practical notes on microservice architectures, Kafka and database performance."
+  "blog.list.lead": {
+    "message": "Deep dives into backend architecture, performance and the trade-offs behind production systems. Most posts are written in Turkish."
   },
-  "homepage.hero.ctaBlog": {
-    "message": "Go to Blog"
+  "blog.list.readPost": {
+    "message": "Read post →"
   },
-  "homepage.skills.title": {
-    "message": "Technologies I Use"
+  "blog.list.empty": {
+    "message": "No matching posts."
   },
-  "homepage.skills.subtitle": {
-    "message": "The languages, frameworks and infrastructure tools I use most in my day-to-day work and side projects."
+  "blog.filter.all": {
+    "message": "All"
   },
-  "homepage.meta.title": {
-    "message": "Home"
+  "blog.filter.ariaLabel": {
+    "message": "Filter by tag"
   },
-  "homepage.meta.description": {
-    "message": "Software engineering projects, engineering blog and personal portfolio."
+  "blog.search.label": {
+    "message": "Search posts"
+  },
+  "blog.search.placeholder": {
+    "message": "Search posts…"
+  },
+  "footer.navAriaLabel": {
+    "message": "Footer"
+  },
+  "footer.about": {
+    "message": "About"
+  },
+  "footer.email": {
+    "message": "Email"
   },
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",

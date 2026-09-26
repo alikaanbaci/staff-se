@@ -1,6 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import type {Options as BlogPluginOptions} from '@docusaurus/plugin-content-blog';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -55,30 +56,54 @@ const config: Config = {
       'classic',
       {
         docs: false,
-        blog: {
-          path: 'blog',
-          routeBasePath: 'blog',
-          blogTitle: 'Mühendislik Blogu',
-          blogDescription:
-            'Yazılım mühendisliği, sistem tasarımı ve öğrenilen dersler üzerine notlar.',
-          postsPerPage: 8,
-          blogSidebarTitle: 'Son Yazılar',
-          blogSidebarCount: 10,
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          editUrl: 'https://github.com/alikaanbaci/staff-se/tree/main/',
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        // Blog, yazı özetlerini global data olarak da yayınlayan sarmalayıcı
+        // plugin üzerinden yükleniyor (aşağıdaki plugins).
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
     ],
+  ],
+
+  plugins: [
+    [
+      './plugins/blog-plugin.ts',
+      {
+        path: 'blog',
+        routeBasePath: 'blog',
+        blogTitle: 'Mühendislik Blogu',
+        blogDescription:
+          'Yazılım mühendisliği, sistem tasarımı ve öğrenilen dersler üzerine notlar.',
+        // Blog listesi tek sayfa: filtre ve arama istemci tarafında tüm
+        // yazılar üzerinde çalışıyor (src/theme/BlogListPage).
+        postsPerPage: 'ALL',
+        blogSidebarTitle: 'Son Yazılar',
+        blogSidebarCount: 10,
+        showReadingTime: true,
+        feedOptions: {
+          type: ['rss', 'atom'],
+          xslt: true,
+        },
+        editUrl: 'https://github.com/alikaanbaci/staff-se/tree/main/',
+        onInlineTags: 'warn',
+        onInlineAuthors: 'warn',
+        onUntruncatedBlogPosts: 'warn',
+      } satisfies BlogPluginOptions,
+    ],
+  ],
+
+  stylesheets: [
+    {
+      href: 'https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap',
+    },
+  ],
+  headTags: [
+    {tagName: 'link', attributes: {rel: 'preconnect', href: 'https://fonts.googleapis.com'}},
+    {
+      tagName: 'link',
+      attributes: {rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous'},
+    },
   ],
 
   themeConfig: {
@@ -89,57 +114,19 @@ const config: Config = {
     },
     navbar: {
       title: 'Ali Kaan Bacı',
-      logo: {
-        alt: 'Site Logosu',
-        src: 'img/logo.svg',
-      },
       items: [
-        {
-          to: '/',
-          label: 'Ana Sayfa',
-          position: 'left',
-        },
-        {to: '/blog', label: 'Blog', position: 'left'},
-        {to: '/about', label: 'Hakkımda', position: 'left'},
-        {
-          type: 'localeDropdown',
-          position: 'right',
-        },
+        {to: '/blog', label: 'Blog', position: 'right'},
+        {to: '/about', label: 'Hakkımda', position: 'right'},
         {
           href: 'https://github.com/alikaanbaci',
           label: 'GitHub',
           position: 'right',
         },
+        // TR/EN segment toggle — src/theme/NavbarItem/ComponentTypes.tsx
+        {type: 'custom-localeToggle', position: 'right'},
       ],
     },
-    footer: {
-      style: 'dark',
-      links: [
-        {
-          title: 'Site',
-          items: [
-            {label: 'Ana Sayfa', to: '/'},
-            {label: 'Blog', to: '/blog'},
-            {label: 'Hakkımda', to: '/about'},
-          ],
-        },
-        {
-          title: 'Bağlantılar',
-          items: [
-            {label: 'GitHub', href: 'https://github.com/alikaanbaci'},
-            {label: 'LinkedIn', href: 'https://www.linkedin.com/in/alikaanbaci'},
-            {label: 'E-posta', href: 'mailto:alikaanbaci@gmail.com'},
-          ],
-        },
-        {
-          title: 'Diğer',
-          items: [
-            {label: 'RSS', href: 'pathname:///blog/rss.xml'},
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} Ali Kaan Bacı. Docusaurus ile inşa edildi.`,
-    },
+    // Footer tamamen src/theme/Footer altında özel bileşen.
     prism: {
       theme: prismThemes.nightOwlLight,
       darkTheme: prismThemes.dracula,

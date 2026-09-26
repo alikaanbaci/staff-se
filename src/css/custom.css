@@ -1,172 +1,305 @@
 /**
- * Lacivert (navy) tema.
- * Infima değişkenleri hakkında: https://infima.dev
+ * Site teması — Geist tipografi, nötr zemin + mavi accent.
+ * Renkler --ak-* token'larında; Infima değişkenleri bunlara bağlanıyor ki
+ * blog yazısı, etiket sayfası gibi varsayılan Docusaurus sayfaları da aynı
+ * görünsün. Infima değişkenleri hakkında: https://infima.dev
  */
 
+/* --- Token'lar: light --- */
 :root {
-  /* Daha minimal/kompakt bir görünüm için taban font boyutunu biraz
-     küçültüyoruz — rem tabanlı tüm boyut/boşluklar (site genelinde yaygın)
-     buna göre orantılı küçülür. */
-  --ifm-font-size-base: 93.75%;
+  --ak-bg: #ffffff;
+  --ak-surface: #f8f9fa;
+  --ak-border: #e4e7eb;
+  --ak-chip: #eef0f3;
+  --ak-text: #0a0b0d;
+  --ak-muted: #555b66;
+  --ak-faint: #8a919c;
+  --ak-accent: #2563eb;
+  --ak-accent-soft: #e8f0fe;
+  --ak-accent-text: #1d4ed8;
+  --ak-shadow: 0 24px 60px -28px rgba(15, 23, 42, 0.25);
+  --ak-cta-bg: #0f1b33;
+  --ak-code-1: #b45309;
+  --ak-code-2: #1d4ed8;
+  --ak-code-3: #15803d;
 
-  /* Marka rengi: canlı mavi (accent), navy zemin üzerinde kontrastlı */
-  --ifm-color-primary: #3b6fe0;
-  --ifm-color-primary-dark: #2055c8;
-  --ifm-color-primary-darker: #1c4cb2;
-  --ifm-color-primary-darkest: #123070;
-  --ifm-color-primary-light: #678fe7;
-  --ifm-color-primary-lighter: #7da0ea;
-  --ifm-color-primary-lightest: #bfd0f5;
+  --ak-font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  --ifm-code-font-size: 92%;
-  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Inter', Helvetica, Arial, sans-serif;
-  --docusaurus-highlighted-code-line-bg: rgba(59, 111, 224, 0.12);
+  --ifm-color-primary: #2563eb;
+  --ifm-color-primary-dark: #1d4ed8;
+  --ifm-color-primary-darker: #1e40af;
+  --ifm-color-primary-darkest: #1e3a8a;
+  --ifm-color-primary-light: #3b82f6;
+  --ifm-color-primary-lighter: #60a5fa;
+  --ifm-color-primary-lightest: #93c5fd;
 
-  /* Site geneli için lacivert tonları (light mode) */
-  --navy-950: #060c1f;
-  --navy-900: #0a1128;
-  --navy-800: #0f1c3f;
-  --navy-700: #16264f;
-  --navy-100: #eef1f8;
+  --ifm-font-family-base: 'Geist', system-ui, -apple-system, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif;
+  --ifm-font-family-monospace: var(--ak-font-mono);
+  --ifm-heading-font-weight: 600;
+  --ifm-code-font-size: 90%;
 
-  --ifm-navbar-background-color: var(--navy-800);
-  --ifm-navbar-link-color: #e7ecfb;
-  --ifm-navbar-height: 4rem;
-  --ifm-footer-background-color: var(--navy-950);
+  --ifm-background-color: var(--ak-bg);
+  --ifm-background-surface-color: var(--ak-surface);
+  --ifm-font-color-base: var(--ak-text);
+  --ifm-toc-border-color: var(--ak-border);
+  --ifm-hr-background-color: var(--ak-border);
+  --ifm-link-hover-decoration: none;
+
+  /* 1200px içerik + 24px yan boşluk */
+  --ifm-container-width-xl: 1248px;
+  --ifm-spacing-horizontal: 1.5rem;
+
+  --ifm-navbar-height: 72px;
+  --ifm-navbar-background-color: var(--ak-bg);
+  --ifm-navbar-shadow: none;
+  --ifm-navbar-padding-horizontal: 1.5rem;
+  --ifm-navbar-link-color: var(--ak-muted);
+  --ifm-navbar-link-hover-color: var(--ak-text);
+  --ifm-navbar-link-active-color: var(--ak-text);
+
+  --docusaurus-highlighted-code-line-bg: rgba(37, 99, 235, 0.1);
 }
 
-/* Navbar her zaman lacivert — light/dark modda marka kimliğini korur */
-.navbar {
-  --ifm-navbar-link-hover-color: #ffffff;
-  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.06);
-}
-.navbar__link,
-.navbar__title {
-  color: #e7ecfb;
-}
-.navbar__link:hover,
-.navbar__link--active {
-  color: #ffffff;
-}
-.navbar__logo {
-  height: 1.85rem;
-}
-.navbar .dropdown__link {
-  color: var(--navy-900);
-}
-
-/* Dark mode: koyu lacivert zemin */
+/* --- Token'lar: dark --- */
 [data-theme='dark'] {
-  --ifm-color-primary: #6d94eb;
-  --ifm-color-primary-dark: #4073e5;
-  --ifm-color-primary-darker: #2a63e2;
-  --ifm-color-primary-darkest: #1744a8;
-  --ifm-color-primary-light: #9ab5f1;
-  --ifm-color-primary-lighter: #b0c5f4;
-  --ifm-color-primary-lightest: #f4f7fd;
+  --ak-bg: #0a0b0d;
+  --ak-surface: #111317;
+  --ak-border: #23272e;
+  --ak-chip: #1a1d23;
+  --ak-text: #edeef0;
+  --ak-muted: #9ba1ab;
+  --ak-faint: #6b7280;
+  --ak-accent: #3b82f6;
+  --ak-accent-soft: rgba(59, 130, 246, 0.14);
+  --ak-accent-text: #7fb0ff;
+  --ak-shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.6);
+  --ak-code-1: #f59e0b;
+  --ak-code-2: #7fb0ff;
+  --ak-code-3: #86efac;
 
-  --ifm-background-color: var(--navy-900);
-  --ifm-background-surface-color: var(--navy-800);
-  --docusaurus-highlighted-code-line-bg: rgba(109, 148, 235, 0.18);
-}
+  --ifm-color-primary: #3b82f6;
+  --ifm-color-primary-dark: #2563eb;
+  --ifm-color-primary-darker: #1d4ed8;
+  --ifm-color-primary-darkest: #1e40af;
+  --ifm-color-primary-light: #60a5fa;
+  --ifm-color-primary-lighter: #7fb0ff;
+  --ifm-color-primary-lightest: #bfdbfe;
 
-[data-theme='dark'] .footer {
-  --ifm-footer-background-color: var(--navy-950);
-}
-
-/* Light mode: navbar/footer lacivert, sayfa gövdesi açık zemin */
-[data-theme='light'] {
-  --ifm-background-color: #ffffff;
-  --ifm-background-surface-color: var(--navy-100);
-}
-
-.footer {
-  --ifm-footer-link-color: #c3cdec;
-  --ifm-footer-title-color: #ffffff;
-}
-.footer--dark {
-  background-color: var(--navy-950);
+  --docusaurus-highlighted-code-line-bg: rgba(59, 130, 246, 0.16);
 }
 
-/* --- Hero / anasayfa bileşenleri --- */
-.hero--navy {
-  background: radial-gradient(
-      1200px circle at 15% -10%,
-      rgba(109, 148, 235, 0.25),
-      transparent 55%
-    ),
-    linear-gradient(180deg, var(--navy-900) 0%, var(--navy-950) 100%);
-  color: #f3f6fd;
-  padding: 4rem 1rem 3.5rem;
-}
-[data-theme='light'] .hero--navy {
-  background: radial-gradient(
-      1200px circle at 15% -10%,
-      rgba(59, 111, 224, 0.35),
-      transparent 55%
-    ),
-    linear-gradient(180deg, var(--navy-800) 0%, var(--navy-950) 100%);
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Infima'nın hero başlığı/alt başlığı varsayılanı (3rem / 1.5rem) daha
-   minimal bir görünüm için burada küçültülüyor. */
-.hero--navy .hero__title {
-  font-size: 2.25rem;
+/* --- Navbar --- */
+.navbar {
+  border-bottom: 1px solid var(--ak-border);
 }
-
-.hero--navy .hero__subtitle {
-  font-size: 1.05rem;
-  color: #c3cdec;
+.navbar__inner {
+  max-width: calc(var(--ifm-container-width-xl) - 2 * var(--ifm-spacing-horizontal));
+  margin: 0 auto;
 }
-
-/* Outline/secondary butonlar Infima varsayılanında koyu metin kullanır —
-   lacivert hero zemininde görünmez oluyor, burada beyaza zorluyoruz. */
-.hero--navy .button--outline.button--secondary {
-  color: #f3f6fd;
-  border-color: rgba(243, 246, 253, 0.5);
+.navbar__brand {
+  gap: 12px;
+  color: var(--ak-text);
 }
-.hero--navy .button--outline.button--secondary:hover {
+.navbar__brand:hover {
+  color: var(--ak-text);
+}
+/* Logo dosyası yerine "AK" monogramı */
+.navbar__brand::before {
+  content: 'AK';
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: var(--ak-accent);
   color: #ffffff;
-  border-color: #ffffff;
-  background: rgba(243, 246, 253, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ak-font-mono);
+  font-size: 13px;
+  font-weight: 500;
 }
-
-.badge--navy {
-  display: inline-block;
-  padding: 0.3rem 0.85rem;
-  border-radius: 999px;
-  background: rgba(109, 148, 235, 0.15);
-  border: 1px solid rgba(109, 148, 235, 0.4);
-  color: #bfd0f5;
-  font-size: 0.85rem;
+.navbar__title {
+  font-size: 16px;
   font-weight: 600;
-  letter-spacing: 0.02em;
-  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+}
+.navbar__items--right {
+  gap: 8px;
+}
+.navbar__items--right > .navbar__link {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.navbar__items--right > .navbar__link--active {
+  background: var(--ak-chip);
+}
+/* Harici link ikonu tasarımda yok */
+.navbar__items--right > .navbar__link svg {
+  display: none;
+}
+/* Tema toggle: 44px kare, çerçeveli */
+.navbar [class*='toggleButton'] {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  border: 1px solid var(--ak-border);
+  color: var(--ak-text);
+}
+.navbar [class*='toggleButton'] svg {
+  width: 18px;
+  height: 18px;
 }
 
-/* --- Blog listesi --- */
-/* Docusaurus varsayılanı /blog listesindeki başlıkları da (h2) 3rem
-   yapıyor — tekil yazı sayfasındaki (h1) boyutla aynı, listede (özellikle
-   art arda birden fazla yazı olunca) gereksiz büyük ve kalın duruyor.
-   Sadece liste sayfalarını (<html> üzerindeki page class'ları, Docusaurus
-   tarafından otomatik eklenir) hedef alıyoruz; tekil yazı sayfası (h1)
-   etkilenmiyor. */
-.blog-list-page article header h2,
+/* --- Ortak bileşenler --- */
+.ak-eyebrow {
+  font-family: var(--ak-font-mono);
+  font-size: 13px;
+  color: var(--ak-accent);
+}
+
+.ak-mark {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: var(--ak-accent);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ak-font-mono);
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.ak-tag {
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--ak-accent-soft);
+  color: var(--ak-accent-text);
+  font-family: var(--ak-font-mono);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.ak-tag--muted {
+  background: var(--ak-chip);
+  color: var(--ak-muted);
+}
+
+.ak-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 48px;
+  padding: 0 22px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.ak-btn:hover {
+  text-decoration: none;
+}
+.ak-btn--primary,
+.ak-btn--primary:hover {
+  background: var(--ak-accent);
+  color: #ffffff;
+}
+.ak-btn--primary:hover {
+  background: var(--ifm-color-primary-dark);
+}
+.ak-btn--secondary,
+.ak-btn--secondary:hover {
+  border-color: var(--ak-border);
+  background: var(--ak-surface);
+  color: var(--ak-text);
+}
+.ak-btn--secondary:hover {
+  border-color: var(--ak-faint);
+}
+.ak-btn--sm {
+  height: 44px;
+  padding: 0 18px;
+  font-size: 14px;
+  background: transparent;
+}
+/* Lacivert CTA kartı üzerindeki butonlar (her iki temada aynı) */
+.ak-btn--light,
+.ak-btn--light:hover {
+  background: #ffffff;
+  color: #0b1220;
+}
+.ak-btn--light:hover {
+  background: #e6ebf5;
+}
+.ak-btn--ghost,
+.ak-btn--ghost:hover {
+  border-color: #5b7199;
+  color: #ffffff;
+}
+.ak-btn--ghost:hover {
+  border-color: #c7d4ea;
+}
+
+/* Kart olarak kullanılan linkler: metin rengi korunur, hover'da çerçeve */
+.ak-card-link,
+.ak-card-link:hover {
+  color: var(--ak-text);
+  text-decoration: none;
+}
+.ak-card-link {
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.ak-card-link:hover {
+  border-color: var(--ak-accent) !important;
+}
+
+/* Sayfa bölümleri: 12 kolonlu grid, dar ekranda tek kolon */
+.ak-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 32px;
+}
+@media (max-width: 996px) {
+  .ak-grid {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 40px;
+  }
+  .ak-grid > * {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+/* --- Blog yazısı / etiket sayfaları --- */
+.blog-wrapper h1,
+.blog-wrapper h2,
+.blog-wrapper h3 {
+  letter-spacing: -0.02em;
+}
 .blog-tags-post-list-page article header h2,
 .blog-authors-posts-page article header h2 {
   font-size: 1.5rem;
 }
 
-.card--surface {
-  height: 100%;
-  border-radius: 12px;
-  border: 1px solid var(--ifm-color-emphasis-200);
-  background: var(--ifm-background-surface-color);
-  padding: 1.5rem;
-  transition: transform 0.15s ease, border-color 0.15s ease;
-}
-.card--surface:hover {
-  transform: translateY(-2px);
-  border-color: var(--ifm-color-primary);
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

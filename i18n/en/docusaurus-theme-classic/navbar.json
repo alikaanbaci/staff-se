@@ -3,14 +3,6 @@
     "message": "Ali Kaan Bacı",
     "description": "The title in the navbar"
   },
-  "logo.alt": {
-    "message": "Site Logo",
-    "description": "The alt text of navbar logo"
-  },
-  "item.label.Ana Sayfa": {
-    "message": "Home",
-    "description": "Navbar item with label Ana Sayfa"
-  },
   "item.label.Blog": {
     "message": "Blog",
     "description": "Navbar item with label Blog"

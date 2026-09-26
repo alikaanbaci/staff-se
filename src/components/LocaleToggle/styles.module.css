@@ -1,0 +1,52 @@
+.toggle {
+  display: inline-flex;
+  padding: 3px;
+  border-radius: 8px;
+  border: 1px solid var(--ak-border);
+  font-family: var(--ak-font-mono);
+  font-size: 12px;
+}
+
+/* Tasarımdaki dikey ayraç: linkler ile toggle'lar arasında */
+.desktop {
+  position: relative;
+  margin-left: 17px;
+}
+.desktop::before {
+  content: '';
+  position: absolute;
+  left: -17px;
+  top: 50%;
+  width: 1px;
+  height: 20px;
+  transform: translateY(-50%);
+  background: var(--ak-border);
+}
+
+.mobile {
+  margin: 0.5rem var(--ifm-menu-link-padding-horizontal);
+}
+
+.option,
+.option:hover {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--ak-muted);
+  text-decoration: none;
+}
+.option:hover {
+  color: var(--ak-text);
+}
+
+.active,
+.active:hover {
+  background: var(--ak-chip);
+  color: var(--ak-text);
+}
+
+/* Dar ekranda navbar çöker; toggle mobil menüde (mobile prop) gösteriliyor */
+@media (max-width: 996px) {
+  .desktop {
+    display: none;
+  }
+}

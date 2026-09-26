@@ -3,7 +3,7 @@ slug: kafkayi-kirarak-ogrenmek-1
 title: "Kafka'yı Kırarak Öğrenmek #1: Broker, Partition, Replica ve Diskteki Bir Ödeme"
 authors: [me]
 tags: [kafka, sistem-tasarimi]
-description: Kafka Lab serisinin ilk bölümü — 3 broker'lı lokal bir cluster üzerinde partition/replica ilişkisi, diskteki segment yapısı, Node.js ile producer/consumer, key → partition hash'i ve pull tabanlı consumer.
+description: Kafka Lab serisinin ilk bölümü — 3 broker'lı lokal bir cluster üzerinde partition/replica ilişkisi, ZooKeeper ve controller, diskteki segment yapısı, Node.js ile producer/consumer, key → partition hash'i ve pull tabanlı consumer.
 ---
 
 :::note[Kafka Lab serisi, bölüm 1]
@@ -150,6 +150,31 @@ broker sayısından büyük olamaz; 3 broker'lı bir cluster'da RF=4 denemesi
 `InvalidReplicationFactorException` ile sonuçlanır.
 
 :::
+
+## ZooKeeper'ın rolü ve controller
+
+`zookeeper-shell` ile ZooKeeper'ın içine bakıldığında önemli bir ayrım
+netleşir: **ZooKeeper'da mesaj verisi yoktur, yalnızca metadata vardır.**
+
+| ZooKeeper path                                | Ne tutar                                                                  |
+| --------------------------------------------- | ------------------------------------------------------------------------- |
+| `/brokers/ids/N`                              | Canlı broker'lar ve endpoint'leri (ephemeral node: broker çöktüğünde silinir) |
+| `/brokers/topics/payments`                    | Partition → replica ataması                                               |
+| `/brokers/topics/payments/partitions/0/state` | leader, isr, leader_epoch; `kafka-topics --describe` çıktısının kaynağı   |
+| `/controller`                                 | Hangi broker'ın controller olduğu                                         |
+| `/controller_epoch`                           | Controller değişim sayacı                                                 |
+
+**Controller**, broker'lardan biridir: `/controller` ephemeral node'unu ilk
+oluşturan broker controller olur ve leader seçimi, partition ataması gibi
+işleri yürütür. Controller çöktüğünde node silinir ve başka bir broker onun
+yerini alır. `controller_epoch` her değişimde artar; böylece ağdan kopup geri
+gelen eski bir controller'ın (zombie controller) komutları reddedilebilir. Aynı
+"epoch ile fencing" fikriyle Kafka'nın başka katmanlarında da (leader epoch,
+producer epoch) karşılaşılır.
+
+Consumer offset'leri de ZooKeeper'da değil, Kafka'nın kendi içindeki
+`__consumer_offsets` topic'inde tutulur. Çok eski sürümlerde bu bilgi
+ZooKeeper'daydı; yüksek yazma yükü nedeniyle Kafka'ya taşındı.
 
 ## Bir ödeme diskte nasıl durur?
 
@@ -462,6 +487,8 @@ rebalance başlar. Bu mekanizma "canlı ama takılmış" consumer'ı yakalar.
 
 - Replication **partition seviyesindedir**; bir broker bir partition'ın en
   fazla bir kopyasını tutar.
+- ZooKeeper yalnızca **metadata** tutar; mesaj verisi ve consumer offset'leri
+  Kafka'nın kendisindedir.
 - Partition diskte **segment**'lere bölünmüş append-only bir log'dur;
   retention ucuzdur, index sparse'tır, mesajlar batch halinde yazılır.
 - Aynı key aynı partition'a gider; farklı key'lerin farklı partition'a gitmesi
